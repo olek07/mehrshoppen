@@ -1,0 +1,15 @@
+{% extends '::base.html.twig' %}
+
+{% block body %}
+
+    {%  for transaction in transactions %}
+
+        {{ transaction.partner.name }} -> {{ transaction.amount }}  ({{ transaction.createDate|date("m.d.Y H:i") }})<br>
+
+    {%  endfor %}
+
+{% endblock %}
+
+{% block stylesheets %}
+
+{% endblock %}
