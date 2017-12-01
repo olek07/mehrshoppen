@@ -19,6 +19,31 @@ class User extends BaseUser
      */
     protected $id;
 
+
+    /**
+     * @var $fullName string
+     * @ORM\Column(type="string", length=30, nullable=false)
+     */
+    protected $fullName = 'aaa';
+
+    /**
+     * @return string
+     */
+    public function getRealName()
+    {
+        return $this->realName;
+    }
+
+    /**
+     * @param string $fullName
+     */
+    public function setFullName($fullName)
+    {
+        $this->fullName = $fullName;
+    }
+
+    
+
     public function __construct()
     {
         parent::__construct();

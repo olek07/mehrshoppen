@@ -53,3 +53,9 @@
 
 @include motion-ui-transitions;
 @include motion-ui-animations;
+
+
+.available {
+  font-size: 2em;
+  color: green;
+}

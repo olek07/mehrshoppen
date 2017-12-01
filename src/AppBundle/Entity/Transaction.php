@@ -28,7 +28,7 @@ class Transaction
 
 
     /**
-     * @ORM\ManyToOne(targetEntity="Partner", inversedBy="transaction")
+     * @ORM\ManyToOne(targetEntity="Partner")
      * @ORM\JoinColumn(name="partner_id", referencedColumnName="id")
      */
     private $partner;
@@ -50,9 +50,9 @@ class Transaction
 
     /**
      * @var float
-     * @ORM\Column(name="totalAmount", type="decimal", scale=2)
+     * @ORM\Column(type="decimal", scale=2)
      */
-    private $totalAmount;
+    private $orderAmount;
 
 
     /**

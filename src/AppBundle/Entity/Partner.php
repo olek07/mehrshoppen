@@ -11,7 +11,7 @@ use Doctrine\Common\Collections\ArrayCollection;
 /**
  * Partner
  *
- * @ORM\Entity 
+ * @ORM\Entity(repositoryClass="AppBundle\Repository\PartnerRepository")
  * @ORM\Table(name="partner")
  */
 
@@ -31,7 +31,7 @@ class Partner
     /**
      * @var string
      *
-     * @ORM\Column(name="alias", type="string", length=20, unique=true)
+     * @ORM\Column(name="alias", type="string", length=20, unique=true, nullable=false)
      */
     private $alias;
 
@@ -42,13 +42,6 @@ class Partner
      * @ORM\Column(name="cashback", type="string", length=255)
      */
     private $cashback;
-
-
-    /**
-     * @ORM\OneToMany(targetEntity="Transaction", mappedBy="partner")
-     */
-    private $transactions;
-
 
     
     /**
@@ -137,7 +130,5 @@ class Partner
     {
         $this->alias = $alias;
     }
-
-    
 
 }

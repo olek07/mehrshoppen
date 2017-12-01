@@ -1,0 +1,15 @@
+AppBundle\Entity\User:
+  user_base (template):
+    username (unique): <username()>
+    email (unique): <email()>
+    plainPassword: <password()>
+    enabled: true
+
+  user_admin (extends user_base):
+    username: admin
+    email: admin@passionfive.de
+    plainPassword: password
+  user{1..30} (extends user_base):
+    username (unique): <username()>
+    email (unique): <email()>
+    plainPassword: <password()>

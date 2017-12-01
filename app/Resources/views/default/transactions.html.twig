@@ -2,11 +2,26 @@
 
 {% block body %}
 
-    {%  for transaction in transactions %}
+    <h1>Transaktionen</h1>
 
-        {{ transaction.partner.name }} -> {{ transaction.amount }}  ({{ transaction.createDate|date("m.d.Y H:i") }})<br>
-
-    {%  endfor %}
+    <table>
+        <thead>
+            <tr>
+                <td>Datum</td>
+                <td>Partner</td>
+                <td>Summe</td>
+            </tr>
+        </thead>
+        <tbody>
+        {% for transaction in transactions %}
+            <tr>
+                <td> {{ transaction.createDate|date("d.m.Y") }} </td>
+                <td> {{ transaction.partner.name }} </td>
+                <td class="{% if transaction.amount > 0 %}green-text{% else %}red-text{% endif %}"> {{ transaction.amount|number_format(2, ',') }} €</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
 
 {% endblock %}
 

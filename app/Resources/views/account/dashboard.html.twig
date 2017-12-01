@@ -1,0 +1,11 @@
+{% extends '::base.html.twig' %}
+
+
+{% block body %}
+
+    <h1>Dashboard</h1>
+
+    <p>Hallo {{app.user.realName}}!</p>
+    <p>Du hast <span class="available">{{ currentBalance|number_format(2, ',') }}€</span> zur Verfügung.</p>
+
+{% endblock %}

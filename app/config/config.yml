@@ -6,11 +6,11 @@ imports:
 # Put parameters here that don't need to change on each machine where the app is deployed
 # https://symfony.com/doc/current/best_practices/configuration.html#application-related-configuration
 parameters:
-    locale: en
+    locale: de
 
 framework:
     #esi: ~
-    #translator: { fallbacks: ['%locale%'] }
+    translator: { fallbacks: ['%locale%'] }
     secret: '%secret%'
     router:
         resource: '%kernel.project_dir%/app/config/routing.yml'
@@ -62,16 +62,31 @@ doctrine:
 
 # Swiftmailer Configuration
 swiftmailer:
-    transport: '%mailer_transport%'
-    host: '%mailer_host%'
-    username: '%mailer_user%'
-    password: '%mailer_password%'
-    spool: { type: memory }
+    spool:     { type: memory }
+    transport: smtp
+    host:      smtp.mailtrap.io
+    username:  098d878147049a
+    password:  db2ed689714125
+    auth_mode: cram-md5
+    port: 465
+
+
 
 fos_user:
     db_driver: orm # other valid values are 'mongodb' and 'couchdb'
     firewall_name: main
     user_class: AppBundle\Entity\User
     from_email:
-        address: "alav@gmx.net"
-        sender_name: "Alexander"
+        address: alav@gmx.net
+        sender_name: Alexander
+
+    registration:
+        confirmation:
+            from_email:
+                address: registration@mehr-shoppen.de
+                sender_name: Registration   
+            enabled:    true
+            template:   FOSUserBundle:Registration:email.txt.twig
+        form:
+            name:               fos_user_registration_form
+            validation_groups:  [Registration, Default]
