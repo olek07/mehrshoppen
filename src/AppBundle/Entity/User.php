@@ -26,13 +26,6 @@ class User extends BaseUser
      */
     protected $fullName = 'aaa';
 
-    /**
-     * @return string
-     */
-    public function getRealName()
-    {
-        return $this->realName;
-    }
 
     /**
      * @param string $fullName
@@ -48,5 +41,15 @@ class User extends BaseUser
     {
         parent::__construct();
         // your own logic
+    }
+
+    /**
+     * Get fullName
+     *
+     * @return string
+     */
+    public function getFullName()
+    {
+        return $this->fullName;
     }
 }

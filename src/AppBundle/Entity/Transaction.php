@@ -113,4 +113,62 @@ class Transaction
 
     
 
+
+    /**
+     * Get id
+     *
+     * @return integer
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set orderAmount
+     *
+     * @param string $orderAmount
+     *
+     * @return Transaction
+     */
+    public function setOrderAmount($orderAmount)
+    {
+        $this->orderAmount = $orderAmount;
+
+        return $this;
+    }
+
+    /**
+     * Get orderAmount
+     *
+     * @return string
+     */
+    public function getOrderAmount()
+    {
+        return $this->orderAmount;
+    }
+
+    /**
+     * Set user
+     *
+     * @param \AppBundle\Entity\User $user
+     *
+     * @return Transaction
+     */
+    public function setUser(\AppBundle\Entity\User $user = null)
+    {
+        $this->user = $user;
+
+        return $this;
+    }
+
+    /**
+     * Get user
+     *
+     * @return \AppBundle\Entity\User
+     */
+    public function getUser()
+    {
+        return $this->user;
+    }
 }
