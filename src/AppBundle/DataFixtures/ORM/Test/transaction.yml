@@ -1,0 +1,7 @@
+AppBundle\Entity\Transaction:
+  transaction-{1..100}:
+    partner: '@partner-*'
+    user: '@user-*'
+    amount: <randomFloat(2, 0, 100)>
+    orderAmount: <randomFloat(2, 100, 1000)>
+    createDate: <dateTime()>

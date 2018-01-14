@@ -39,7 +39,7 @@ class Partner
     /**
      * @var string
      *
-     * @ORM\Column(name="cashback", type="string", length=255)
+     * @ORM\Column(name="cashback", type="string", length=255, nullable=true)
      */
     private $cashback;
 

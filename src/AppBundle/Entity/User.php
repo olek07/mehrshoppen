@@ -21,10 +21,32 @@ class User extends BaseUser
 
 
     /**
+     * @ORM\Column(type="string", columnDefinition="ENUM('mrs', 'mr')") 
+     */
+    protected $salutation;
+
+    /**
      * @var $fullName string
      * @ORM\Column(type="string", length=30, nullable=false)
      */
-    protected $fullName = 'aaa';
+    protected $fullName;
+
+
+
+    /**
+     * @param string $salutation
+     */
+    public function setSalutation($salutation)
+    {
+        $this->salutation = $salutation;
+    }
+
+    public function getSalutation()
+    {
+        return $this->salutation;
+    }
+
+
 
 
     /**

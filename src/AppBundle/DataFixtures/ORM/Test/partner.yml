@@ -1,0 +1,15 @@
+AppBundle\Entity\Partner:
+  partner-1:
+    alias: rewe
+    cashback: 12%
+    name: Rewe
+
+
+  partner-{1..20}:
+    name: <company()>
+    alias: <alias(@self->name)>
+    cashback: <randomFloat(1, 0, 10)>%
+
+  partner-mehrshoppen:
+    alias: mehr-shoppen
+    name: Mehr-Shoppen

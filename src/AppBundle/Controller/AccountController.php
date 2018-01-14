@@ -37,7 +37,7 @@ class AccountController extends Controller
         // http://docs.doctrine-project.org/projects/doctrine-orm/en/latest/cookbook/aggregate-fields.html
 
         $dql =
-            "SELECT SUM(e.amount) AS balance FROM AppBundle\Entity\Transaction e " .
+            "SELECT SUM(e.amount) AS balance FROM AppBundle\\Entity\\Transaction e " .
             "WHERE e.user = ?1";
 
         $em = $this->getDoctrine()->getManager();
