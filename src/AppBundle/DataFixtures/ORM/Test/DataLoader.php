@@ -14,6 +14,7 @@ class DataLoader extends AbstractLoader
         return  [
             __DIR__ . '/user.yml',
             __DIR__ . '/partner.yml',
+            __DIR__ . '/intern.yml',
             __DIR__ . '/transaction.yml'
         ];
     }

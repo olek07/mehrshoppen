@@ -1,6 +1,7 @@
 AppBundle\Entity\User:
   user-base (template):
     username (unique): <username()>
+    fullName: <firstname()> <lastname()>
     email (unique): <email()>
     plainPassword: <password()>
     enabled: true

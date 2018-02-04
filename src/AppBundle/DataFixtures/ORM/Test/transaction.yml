@@ -5,3 +5,10 @@ AppBundle\Entity\Transaction:
     amount: <randomFloat(2, 0, 100)>
     orderAmount: <randomFloat(2, 100, 1000)>
     createDate: <dateTime()>
+
+  transaction-{1..20}:
+      partner: '@partner-mehrshoppen'
+      user: '@user-*'
+      amount: <randomFloat(2, -100, 0)>
+      orderAmount: <randomFloat(2, 100, 1000)>
+      createDate: <dateTime()>

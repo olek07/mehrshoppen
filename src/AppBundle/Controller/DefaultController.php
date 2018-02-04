@@ -2,12 +2,12 @@
 
 namespace AppBundle\Controller;
 
+use AppBundle\Entity\AbstractPartner;
 use AppBundle\Entity\Partner;
 use AppBundle\Entity\Transaction;
 use AppBundle\Service\MessageGenerator;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
-use Symfony\Component\BrowserKit\Response;
 use Symfony\Component\HttpFoundation\Request;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
 
@@ -20,15 +20,9 @@ class DefaultController extends Controller
     public function indexAction(Request $request)
     {
 
-        /*
         $partners = $this->getDoctrine()
             ->getRepository(Partner::class)
             ->findAll();
-        */
-
-        $partners = $this->getDoctrine()
-            ->getRepository(Partner::class)
-            ->findPartners();
 
         return $this->render('default/index.html.twig', [
             'base_dir' => realpath($this->getParameter('kernel.project_dir')).DIRECTORY_SEPARATOR,
@@ -44,7 +38,7 @@ class DefaultController extends Controller
 
 
         /**
-         * @var $partner Partner
+         * @var $partner AbstractPartner
          */
         $partner = $this->getDoctrine()
             ->getRepository(Partner::class)

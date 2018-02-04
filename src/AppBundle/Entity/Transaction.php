@@ -28,7 +28,7 @@ class Transaction
 
 
     /**
-     * @ORM\ManyToOne(targetEntity="Partner")
+     * @ORM\ManyToOne(targetEntity="AbstractPartner")
      * @ORM\JoinColumn(name="partner_id", referencedColumnName="id")
      */
     private $partner;

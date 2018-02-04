@@ -6,7 +6,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * @ORM\Entity()
  */
-class Partner extends  AbstractPartner
+class Intern extends AbstractPartner
 {
 
 }

@@ -1,0 +1,4 @@
+AppBundle\Entity\Intern:
+  partner-mehrshoppen:
+    alias: mehr-shoppen
+    name: Mehr-Shoppen
